@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/banner.svg" alt="streamdeck-icons-stage-keys" width="100%"></p>
+
 # Music Instruments for Stage Keys
 
 **Full-colour sound-select icons for the live keyboardist — one Stream Deck key per voice, so you recognise the sound at a glance under stage lighting.**
