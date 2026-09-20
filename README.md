@@ -1,16 +1,48 @@
 # Music Instruments for Stage Keys
 
-> A Stream Deck icon pack for the live keyboardist (short name: **Stage Keys**).
+**Full-colour sound-select icons for the live keyboardist — one Stream Deck key per voice, so you recognise the sound at a glance under stage lighting.**
 
-**▶ [Get it free on the Elgato Marketplace](https://marketplace.elgato.com/product/music-instruments-for-stage-keys-f4ce84f5-2eda-4431-9a36-d847e5094fa9)** · CC-BY-4.0 · see the [changelog](CHANGELOG.md)
+**▶ [Get it free on the Elgato Marketplace](https://marketplace.elgato.com/product/music-instruments-for-stage-keys-f4ce84f5-2eda-4431-9a36-d847e5094fa9)** · CC-BY-4.0 · [changelog](CHANGELOG.md)
 
-**Full-colour sound-select icons for the live keyboardist.** One Stream Deck
-key per voice, covering the complete **General MIDI / XP** sound set (all 128
-programs, 16 families) **plus the modern synth categories** best-selling synths
-expose that GM has no program for. Recognise the sound at a glance under stage
-lighting — no menu-diving, no patch numbers.
+![The Stage Keys instrument palette](preview.png)
 
-![Stage Keys palette](preview.png)
+Every icon also ships an **animated *(playing)* state** — wire it to state 1 so
+the sound you're currently on comes alive while the rest stay calm:
+
+<p>
+  <img src="icons/ep-rhodes-playing.gif" width="72" alt="Rhodes">
+  <img src="icons/mellotron-playing.gif" width="72" alt="Mellotron">
+  <img src="icons/vocoder-playing.gif" width="72" alt="Vocoder">
+  <img src="icons/drum-machine-playing.gif" width="72" alt="Drum machine">
+  <img src="icons/arpeggio-playing.gif" width="72" alt="Arpeggio / seq">
+  <img src="icons/vibraphone-playing.gif" width="72" alt="Vibraphone">
+  <img src="icons/accordion-playing.gif" width="72" alt="Accordion">
+  <img src="icons/saxophone-playing.gif" width="72" alt="Saxophone">
+  <img src="icons/layer_piano-strings-playing.gif" width="72" alt="Piano + Strings combo">
+  <img src="icons/split_bass-lead-playing.gif" width="72" alt="Bass / Lead split">
+</p>
+
+## What's in the pack
+
+| | |
+|---|---|
+| **Icons** | **226** — 113 subjects × 2 states (static + animated *playing*) |
+| **Subjects** | **92** instruments + **21** Dual/Layer & Split combo keys |
+| **Coverage** | the complete **General MIDI / XP** set (128 programs, 16 families) + modern synth categories + live-rig extras |
+| **Format** | 144 × 144 — static PNG, animated looping GIF |
+| **Licence** | **[CC-BY-4.0](LICENSE)** — free to use with attribution |
+| **Map** | program number → icon: **[GM-MAP.md](GM-MAP.md)** |
+
+## Install
+
+1. Get it from the **[Elgato Marketplace](https://marketplace.elgato.com/product/music-instruments-for-stage-keys-f4ce84f5-2eda-4431-9a36-d847e5094fa9)**
+   (free), or download [`dist/com.beennnn.stagekeys.streamDeckIconPack`](dist/com.beennnn.stagekeys.streamDeckIconPack) from this repo.
+2. Double-click the file — it installs into Stream Deck's Icon Library, with
+   per-icon names and searchable tags.
+3. Set any key's icon from the library. To make the key *also switch the sound*,
+   see [Make the keys actually switch sounds](#make-the-keys-actually-switch-sounds).
+
+---
 
 ## Why a keyboardist needs this
 
@@ -58,25 +90,24 @@ this pack.)*
 
 ## Animated icons — light up the active sound
 
-Instruments also come as **animated** variants (looping 144×144 GIF — the
-format Stream Deck reliably plays on keys): the
-mellotron's reels turn, the vocoder's bars dance, a synth's waveform scrolls.
-The idea: **an icon animates when its sound is active**. On a Stream Deck, wire
-**state 0 = the static icon** (idle) and **state 1 = the animated icon**
-(playing), driven by your MIDI plugin's state feedback — so the sound you're
-currently on comes alive while the rest stay calm.
+Every subject has an animated variant (looping 144 × 144 GIF — the format Stream
+Deck reliably plays on keys). The idea: **an icon animates when its sound is
+active**. Wire **state 0 = the static icon** (idle) and **state 1 = the animated
+icon** (playing), driven by your MIDI plugin's state feedback.
 
-![Animated Stage Keys — all 92 in motion](animated-showcase.webp)
+![Stage Keys animated icons in motion](animated-showcase.webp)
 
-**All 92 in motion above** (transparent background). The motion reads as **how
-the instrument is played**: struck instruments bounce, held winds sway, plucked
-strings wobble, the accordion's bellows stretch, a cymbal spins — and the
-electronic ones get **bespoke internal motion** (mellotron reels, vocoder &
-synth waveforms, drum-machine LEDs, arpeggio steps, vibraphone mallets). The
-split combo keys animate too — each half moves inside the fixed tile.
-Regenerate with `bin/build-all.sh` (static + animated + combos, end to end);
-the animated Marketplace gallery comes from `bin/maker-media.sh`
-(`gallery-animated.mp4`).
+The motion reads as **how the instrument is played**: struck instruments bounce,
+held winds sway, plucked strings wobble, the accordion's bellows stretch, a
+cymbal spins — and the electronic ones get **bespoke internal motion**
+(mellotron reels, vocoder & synth waveforms, drum-machine LEDs, arpeggio steps,
+vibraphone mallets). The split combo keys animate too — each half moves inside
+the fixed tile.
+
+Each animated GIF ships with a companion `-playing.png` poster frame (first
+frame), because the Stream Deck Icon Library renders each grid cell from a
+static image and plays the GIF only on hover. The posters sit alongside the
+icons and are not listed in `icons.json`.
 
 ## Split-view combo buttons — two instruments on one key
 
@@ -85,13 +116,24 @@ brass, Rhodes + sax, organ + strings). For those, `bin/gen_duo.py` builds a
 **split button**: one 144 × 144 key divided diagonally, instrument A lower-left
 ↙ and instrument B upper-right ↗, over a dark tile with a thin separator. It
 **composes the pack's own full-colour sources** (no redraw), so a combo always
-matches the single icons it's made of and reads at a glance under stage lighting.
+matches the single icons it's made of.
+
+<p>
+  <img src="icons/layer_piano-strings.png" width="72" alt="Piano + Strings">
+  <img src="icons/layer_organ-strings.png" width="72" alt="Organ + Strings">
+  <img src="icons/layer_lead-pad.png" width="72" alt="Lead + Pad">
+  <img src="icons/split_bass-organ.png" width="72" alt="Bass / Organ">
+  <img src="icons/split_bass-lead.png" width="72" alt="Bass / Lead">
+  <img src="duo/piano__trumpet.png" width="72" alt="Piano + Trumpet">
+</p>
+
+**21 of these combos ship in the pack.** The generator can build many more:
 
 ```sh
 bin/gen_duo.py                       # build the default piano+brass set → duo/
 bin/gen_duo.py piano-upright trumpet # one combo, any two src/ instruments
 bin/gen_duo.py ep-rhodes saxophone rhodes+sax   # A=↙  B=↗  [output name]
-bin/gen_duo.py --matrix              # full live-rig set: Track 1 × Track 2 (126)
+bin/gen_duo.py --matrix              # full live-rig set: Track 1 × Track 2
 bin/gen_duo.py --presets             # classic consumer-piano Dual/Split combos
 ```
 
@@ -102,23 +144,20 @@ Piano + Strings, Piano + Choir, E.Piano + Strings, Harpsichord + Strings,
 Strings + Brass, and left-hand-bass splits (Ac.Bass / Piano, Bass / Organ…).
 Synth-side (from those manuals' factory combis): Lead + Pad, detuned Saw +
 Square dual lead, Synth-Brass + Lead, Strings + Pad, and split-voice basses
-under a lead (Synth-Bass / Lead — the EDM staple, Bass / Lead). Per the manuals
-the split voice is a bass in the left hand. Edit the `PRESETS` table to add more.
+under a lead (Synth-Bass / Lead — the EDM staple, Bass / Lead).
 
 `--matrix` builds every pairing of a two-row sound-select rig — Track 1
 keyboards (bottom) × Track 2 leads (top) — the layout a live keyboardist uses to
 layer a comping voice under a lead. Edit the `TRACK1` / `TRACK2` tables in the
-script to match your own rig. Output lands in [`duo/`](duo/) as submit-ready
-144 × 144 PNG. Any two of the 92 instruments compose — pass their `src/`
-basenames (see [GM-MAP.md](GM-MAP.md)).
+script to match your own rig. Output lands in [`duo/`](duo/) as 144 × 144 PNG.
+Any two of the 92 instruments compose — pass their `src/` basenames (see
+[GM-MAP.md](GM-MAP.md)).
+
 Tip: pair the **upright** piano rather than the grand for the dark tile — its
 wood body stays visible where the near-black grand does not. Positioning per
-instrument is tuned in the script's `ANCHOR` table; add an entry to fine-tune a
-new one.
+instrument is tuned in the script's `ANCHOR` table.
 
-![Split-view combo buttons](duo/piano__trumpet.png)
-
-## What's inside (92 icons)
+## The 92 instruments
 
 Organised around the **General MIDI (GM 1) sound map** — the same 16 banks a
 Roland XP / SC / GS and any GM workstation expose — so it doubles as an XP patch
@@ -150,23 +189,15 @@ program-by-program table: **[GM-MAP.md](GM-MAP.md)**.
 - **Beyond GM (modern synth categories)** — synthesizer, drum kit, drum
   machine, sampler/MPC, arpeggio/seq, mellotron, vocoder
 
-## Install
-
-Download **[`dist/com.beennnn.stagekeys.streamDeckIconPack`](dist/)** and
-double-click it — the pack installs into Stream Deck's Icon Library, with
-per-icon names and searchable tags.
-
 ## Rebuild from source
 
 Icons are authored as parametric SVGs in [`src/`](src/) and rendered to
 144 × 144 PNG. Built with **[sdicons](https://github.com/Beennnn/streamdeck-toolkit)**
-(the generic Stream Deck icon-pack toolkit):
+(the generic Stream Deck icon-pack toolkit), cloned alongside this repo:
 
 ```sh
-# with the sdicons toolkit cloned alongside this repo:
-bin/build.sh
-# → regenerates icons/, icons.json and a submit-ready
-#   dist/com.beennnn.stagekeys.streamDeckIconPack
+bin/build.sh       # render → icons/, icons.json, dist/*.streamDeckIconPack
+bin/build-all.sh   # full chain: static + animated instruments + animated combos
 ```
 
 Names and tags come from [`tags.json`](tags.json); pack metadata is in
@@ -181,7 +212,8 @@ review. Elgato's [Icon Pack Man](https://iconpackman.elgato.com/) web tool is
 *optional* (and drops icon names/tags on import — `sdicons repair` fixes its
 exports). The Marketplace listing media (thumbnail, icon previews, gallery) is
 generated at the console's exact dimensions by `bin/maker-media.sh`
-(→ `maker-media/`, gitignored). Full process: [sdicons publishing docs](https://github.com/Beennnn/streamdeck-toolkit/blob/main/docs/publishing.md).
+(→ `maker-media/`, gitignored).
+Full process: [sdicons publishing docs](https://github.com/Beennnn/streamdeck-toolkit/blob/main/docs/publishing.md).
 
 ## License
 
