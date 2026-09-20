@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-label="Music Instruments for Stage Keys — 226 sound-select Stream Deck icons covering 113 voices, the full General MIDI program set">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="0.55" stop-color="#141a35"/>
+      <stop offset="1" stop-color="#1c1030"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6ea8fe"/>
+      <stop offset="0.5" stop-color="#a06bff"/>
+      <stop offset="1" stop-color="#ff6ac1"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="360" fill="url(#bg)"/>
+
+  <!-- motif: says what the repo is -->
+  <g transform="translate(70,100)">
+    <g fill="none" stroke="#2a3358" stroke-width="2">
+      <rect x="0" y="4" width="56" height="46" rx="9"/><rect x="66" y="4" width="56" height="46" rx="9"/><rect x="132" y="4" width="56" height="46" rx="9"/>
+      <rect x="0" y="58" width="56" height="46" rx="9"/><rect x="66" y="58" width="56" height="46" rx="9"/><rect x="132" y="58" width="56" height="46" rx="9"/>
+      <rect x="0" y="112" width="56" height="46" rx="9"/><rect x="66" y="112" width="56" height="46" rx="9"/><rect x="132" y="112" width="56" height="46" rx="9"/>
+    </g>
+    <g stroke="url(#accent)" stroke-width="3" fill="none" stroke-linecap="round">
+      <circle cx="28" cy="27" r="12"/>
+      <path d="M 82 38 l 12 -22 l 12 22 z"/>
+      <path d="M 146 36 v -18 M 160 36 v -12 M 174 36 v -24"/>
+      <path d="M 10 81 q 9 -14 18 0 t 18 0"/>
+      <path d="M 94 69 l 13 12 l -13 12 l -13 -12 z"/>
+      <circle cx="160" cy="81" r="12"/><circle cx="160" cy="81" r="4" fill="url(#accent)" stroke="none"/>
+      <rect x="16" y="123" width="24" height="24" rx="4"/>
+      <path d="M 94 123 v 24 M 82 135 h 24"/>
+      <g fill="url(#accent)" stroke="none"><circle cx="148" cy="135" r="5"/><circle cx="166" cy="135" r="5"/></g>
+    </g>
+  </g>
+
+  <!-- title block -->
+  <g transform="translate(300,0)">
+    <text x="0" y="170" font-family="-apple-system, Segoe UI, sans-serif" font-size="82" font-weight="700" fill="#ffffff" letter-spacing="1.5">STAGE KEYS</text>
+    <rect x="2" y="192" width="557" height="5" rx="2.5" fill="url(#accent)"/>
+    <text x="2" y="238" font-family="-apple-system, Segoe UI, sans-serif" font-size="24" fill="#aab4d8">226 sound-select icons — 113 voices, the full General MIDI set.</text>
+    <text x="2" y="276" font-family="Menlo, Consolas, monospace" font-size="17" fill="#7f8bb5">static + animated  ·  free on the Elgato Marketplace  ·  CC-BY-4.0</text>
+  </g>
+
+  <!-- family baseline -->
+  <rect x="70" y="312" width="1140" height="3" rx="1.5" fill="#222b4d"/>
+  <rect x="70" y="312" width="210" height="3" rx="1.5" fill="url(#accent)"/>
+</svg>
